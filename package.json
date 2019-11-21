@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.3.2",
+    "imagesloaded": "^4.1.4",
+    "masonry-layout": "^4.2.2",
     "vue": "^2.6.10"
   },
   "devDependencies": {

@@ -1,28 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+			<section class="grid-wrap">
+				<ul class="grid swipe-down" id="grid">
+					<li class="title-box">
+						<h2>Illustrations by <a href="http://ryotakemasa.com/">Ryo Takemasa</a></h2>
+					</li>
+          <li v-for="(item, index) in 40" :key="index">
+            <a href="#">
+              <img :src="`https://tympanus.net/Tutorials/SamsungGrid/img/${item % 13 === 0 ? item % 13 + 1 : item % 13}.jpg`" alt="dummy">
+              <h3>A fantastic title {{item}}</h3>
+            </a>
+          </li>
+				</ul>
+			</section>
+		</div><!-- /container -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { GridScrollFx } from './js/gridScrollFx.js'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+  },
+  mounted () {
+    new GridScrollFx(document.getElementById('grid'), {
+			viewportFactor : 0.4
+		} );
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import './css/demo.css';
+@import './css/component.css';
 </style>
