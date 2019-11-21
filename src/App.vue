@@ -1,20 +1,16 @@
 <template>
   <div id="app">
     <div class="container">
-			<section class="grid-wrap">
-				<ul class="grid swipe-down" id="grid">
-					<li class="title-box">
-						<h2>Illustrations by <a href="http://ryotakemasa.com/">Ryo Takemasa</a></h2>
-					</li>
-          <li v-for="(item, index) in 40" :key="index">
-            <a href="#">
-              <img :src="`https://tympanus.net/Tutorials/SamsungGrid/img/${item % 13 === 0 ? item % 13 + 1 : item % 13}.jpg`" alt="dummy">
-              <h3>A fantastic title {{item}}</h3>
-            </a>
-          </li>
-				</ul>
-			</section>
-		</div><!-- /container -->
+      <header class="codrops-header">
+				<h1>Grid Loading and Hover Effect <span>Recreating <a href="http://design.samsung.com/">Samsung's</a> grid loading effect</span></h1>	
+				<nav class="codrops-demos">
+          <router-link to="/swipe-right">Swipe right</router-link>
+          <router-link to="/swipe-down">Swipe Down</router-link>
+          <router-link to="/rotate">Rotate</router-link>
+				</nav>
+			</header>
+      <router-view />
+		</div>
   </div>
 </template>
 
