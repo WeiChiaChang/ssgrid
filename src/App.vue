@@ -9,7 +9,9 @@
           <router-link to="/rotate">Rotate</router-link>
 				</nav>
 			</header>
-      <router-view />
+      <transition name="fade" mode="out-in">
+        <router-view />
+      </transition>
 		</div>
   </div>
 </template>
@@ -32,4 +34,16 @@ export default {
 <style>
 @import './css/demo.css';
 @import './css/component.css';
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: .32s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
+}
 </style>

@@ -128,10 +128,14 @@ GridScrollFx.prototype.options = {
 GridScrollFx.prototype._init = function () {
 	var self = this, items = [];
 
-	[].slice.call(this.el.children).forEach(function (el) {
-		var item = new GridItem(el);
-		items.push(item);
-	});
+	if (this.el) {
+		[].slice.call(this.el.children).forEach(function (el) {
+			var item = new GridItem(el);
+			items.push(item);
+		});
+	}
+	// eslint-disable-next-line no-console
+	console.clear();
 
 	this.items = items;
 	this.itemsCount = this.items.length;
