@@ -7,7 +7,7 @@
 				</li>
         <li v-for="(item, index) in 40" :key="index">
           <a href="#">
-            <img :src="`https://tympanus.net/Tutorials/SamsungGrid/img/${item % 13 === 0 ? item % 13 + 8 : item % 13}.jpg`" alt="dummy">
+            <img :src="require(`../../assets/${item % 13 === 0 ? item % 13 + 8 : item % 13}.jpg`)" alt="">
             <h3>A fantastic title {{item}}</h3>
           </a>
         </li>
