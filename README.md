@@ -1,5 +1,7 @@
 # ssgrid
 
+![Preview](https://upload.cc/i1/2020/01/22/I8auty.png)
+
 ## Project setup
 ```
 npm install
